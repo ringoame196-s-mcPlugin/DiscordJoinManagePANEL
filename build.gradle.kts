@@ -43,6 +43,14 @@ configure<BukkitPluginDescription> {
 	version = pluginVersion
 	apiVersion = "1." + pluginVersion.split(".")[1]
 	author = "ringoame196_s_mcPlugin"
+
+	commands {
+		register("djoinpmanager") {
+			description = "DiscordJoinManagerPanelの管理用コマンド"
+			permission = "op"
+			usage = "/djoinpmanager reload"
+		}
+	}
 }
 
 tasks.withType<ShadowJar> {
