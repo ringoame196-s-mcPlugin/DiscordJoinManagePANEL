@@ -21,7 +21,7 @@ object DataManager {
 		Data.panels[panelID] = PanelData(lore, command)
 	}
 
-	fun acquisitionReactions() = Data.panels
+	fun acquisitionPanels() = Data.panels
 
 	fun acquisitionReactionPanelData(reactionID: String): PanelData? = Data.panels[reactionID]
 
