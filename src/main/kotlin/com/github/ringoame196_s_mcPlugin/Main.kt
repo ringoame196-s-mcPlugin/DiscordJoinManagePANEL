@@ -13,11 +13,14 @@ class Main : JavaPlugin() {
 
     override fun onEnable() {
         super.onEnable()
+        // ファイル生成
         saveDefaultConfig()
         saveResource("reactionPanel.yml", false)
+
+        // config
         val config = plugin.config
         Data.displayChannelID = config.getString("display_channel_id")
-        Data.permitRoll = config.getString("permit_roll_id")
+        Data.permitRollID = config.getString("permit_roll_id")
 
         discordBotManager.boot(plugin) // DiscordBOT起動させる
 

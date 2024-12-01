@@ -1,7 +1,7 @@
 package com.github.ringoame196_s_mcPlugin.managers
 
 import com.github.ringoame196_s_mcPlugin.Data
-import com.github.ringoame196_s_mcPlugin.DiscordEvent
+import com.github.ringoame196_s_mcPlugin.MessageReactionAddEvent
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.entities.Activity
@@ -22,7 +22,7 @@ class DiscordBotManager {
             if (token != "" && token != null) { // tokenが設定されていないと 実行しない
                 val jdaBuilder = JDABuilder.createDefault(token)
                 jdaBuilder.setActivity(Activity.playing(activityText)) // アクティビティ登録
-                val jda = jdaBuilder.addEventListeners(DiscordEvent()).build() // bot起動
+                val jda = jdaBuilder.addEventListeners(MessageReactionAddEvent(plugin)).build() // bot起動
                 jda.awaitReady()
                 Data.JDA = jda
             } else {

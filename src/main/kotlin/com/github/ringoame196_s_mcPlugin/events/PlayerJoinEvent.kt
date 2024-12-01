@@ -13,6 +13,6 @@ class PlayerJoinEvent : Listener {
     fun onPlayerJoin(e: PlayerJoinEvent) {
         if (Data.JDA == null) return // bot起動を前提に
         val player = e.player
-        panelManager.send(player)
+        panelManager.sendPanelEmbed(player)
     }
 }
