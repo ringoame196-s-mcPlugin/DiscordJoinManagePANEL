@@ -1,0 +1,20 @@
+# @name - プレイヤーの名前
+# @UUID - プレイヤーのUUID
+# @ip - プレイヤーのIP
+# デフォルト絵文字のみ使用可
+
+🔧:
+  lore: "op付与"
+  command: "op @name"
+❌:
+  lore: "op剥奪"
+  command: "deop @name"
+👋:
+  lore: "kick"
+  command: "kick @name"
+🚫:
+  lore: "ban"
+  command: "ban @name"
+🈲:
+  lore: "ipBan"
+  command: "ban-ip @name"
