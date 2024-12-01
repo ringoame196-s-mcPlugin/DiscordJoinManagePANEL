@@ -17,12 +17,6 @@ object DataManager {
 
 	fun acquisitionDisplayChannelID() = Data.displayChannelID
 
-	fun setPermitRollID(permitRollID: String?) {
-		Data.permitRollID = permitRollID
-	}
-
-	fun acquisitionPermitRollID() = Data.permitRollID
-
 	fun addReaction(panelID: String, lore: String, command: String) {
 		Data.panels[panelID] = PanelData(lore, command)
 	}

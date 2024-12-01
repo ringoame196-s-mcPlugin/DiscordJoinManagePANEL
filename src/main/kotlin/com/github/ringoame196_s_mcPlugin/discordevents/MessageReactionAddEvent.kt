@@ -27,32 +27,29 @@ class MessageReactionAddEvent(private val plugin: Plugin) : ListenerAdapter() {
 			val embed = message.embeds[0]
 			val playerName = embed.author?.name ?: return@queue
 			val player = Bukkit.getPlayer(playerName)
-			val panelData = DataManager.acquisitionReactionPanelData(emoji) ?: return@queue
-			val lore = panelData.lore
-			val command = panelData.command
+			val panelData = DataManager.acquisitionReactionPanelData(emoji)
 
 			if (!panelManager.isPanel(embed)) return@queue
-
 			val sendMessage: String
-			if (player != null) {
-				panelManager.runMcCommand(plugin, command, player)
-				sendMessage = "$userMention\n${player.name}に[$lore]を実行しました"
+			if (panelData == null) {
+				sendMessage = "${emoji}のコマンドは未設定です"
 			} else {
-				sendMessage =
-					"$userMention\n${playerName}の取得に失敗しました(オフラインの場合は取得できません)"
+				if (player != null) {
+					val lore = panelData.lore
+					val command = panelData.command
+					panelManager.runMcCommand(plugin, command, player)
+					sendMessage = "${player.name}に「$lore」を実行しました"
+				} else {
+					sendMessage =
+						"${playerName}の取得に失敗しました(オフラインの場合は取得できません)"
+				}
 			}
-			message.reply(sendMessage).queue()
+			message.reply("$userMention\n$sendMessage").queue()
 			e.reaction.removeReaction(user).queue()
 		}
 	}
 
 	private fun isExecutable(member: Member): Boolean {
-		return member.hasPermission(Permission.ADMINISTRATOR) || isInPermitRole(member)
-	}
-
-	private fun isInPermitRole(member: Member): Boolean {
-		val roleID = DataManager.acquisitionPermitRollID() ?: return false
-		val permitRoll = member.jda.getRoleById(roleID) ?: return false
-		return member.roles.contains(permitRoll)
+		return member.hasPermission(Permission.ADMINISTRATOR)
 	}
 }

@@ -21,7 +21,6 @@ class Main : JavaPlugin() {
 		// config
 		val config = plugin.config
 		DataManager.setDisplayChannelID(config.getString("display_channel_id"))
-		DataManager.setPermitRollID(config.getString("permit_roll_id"))
 
 		discordBotManager.boot(plugin) // DiscordBOT起動させる
 
