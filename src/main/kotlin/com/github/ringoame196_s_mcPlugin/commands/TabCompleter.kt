@@ -5,15 +5,15 @@ import org.bukkit.command.CommandSender
 import org.bukkit.command.TabCompleter
 
 class TabCompleter : TabCompleter {
-	override fun onTabComplete(
-		commandSender: CommandSender,
-		command: Command,
-		label: String,
-		args: Array<out String>
-	): MutableList<String> {
-		return when (args.size) {
-			1 -> mutableListOf(CommandConst.RELOAD_COMMAND)
-			else -> mutableListOf()
-		}
-	}
+    override fun onTabComplete(
+        commandSender: CommandSender,
+        command: Command,
+        label: String,
+        args: Array<out String>
+    ): MutableList<String> {
+        return when (args.size) {
+            1 -> mutableListOf(CommandConst.RELOAD_COMMAND)
+            else -> mutableListOf()
+        }
+    }
 }
