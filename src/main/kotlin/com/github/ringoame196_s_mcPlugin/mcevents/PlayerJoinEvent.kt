@@ -7,12 +7,12 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 
 class PlayerJoinEvent : Listener {
-	private val panelManager = PanelManager()
+    private val panelManager = PanelManager()
 
-	@EventHandler
-	fun onPlayerJoin(e: PlayerJoinEvent) {
-		DataManager.acquisitionJDA() ?: return // bot起動を前提に
-		val player = e.player
-		panelManager.sendPanelEmbed(player)
-	}
+    @EventHandler
+    fun onPlayerJoin(e: PlayerJoinEvent) {
+        DataManager.acquisitionJDA() ?: return // bot起動を前提に
+        val player = e.player
+        panelManager.sendPanelEmbed(player)
+    }
 }
