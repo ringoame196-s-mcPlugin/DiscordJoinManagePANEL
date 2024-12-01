@@ -1,6 +1,7 @@
 # DiscordJoinManagePANEL
-
+![image](https://github.com/user-attachments/assets/4a431e21-3aa9-4375-9857-02dc148f9b31)
 ## プラグイン説明
+マイクラ鯖参加者に対して、絵文字でコマンドを実行する
 
 ## プラグインダウンロード
 
