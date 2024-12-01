@@ -11,6 +11,9 @@
 
 - /djoinpmanager <reload> - パネル情報をリロードする
 
+## 使い方
+- DiscordBOTで送られてきたパネルに実行したい絵文字をクリック(管理者権限持ちのみ)
+
 ## configファイル
 
 - token - DiscordBOTのToken
