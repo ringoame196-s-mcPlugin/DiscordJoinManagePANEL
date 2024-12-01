@@ -31,7 +31,7 @@ class MessageReactionAddEvent(private val plugin: Plugin) : ListenerAdapter() {
                 val lore = panelData.lore
                 val command = panelData.command
 
-                if (panelManager.isPanel(embed)) return@queue
+                if (!panelManager.isPanel(embed)) return@queue
 
                 val sendMessage: String
                 if (player != null) {
