@@ -15,6 +15,3 @@
 🚫:
   lore: "ban"
   command: "ban @name"
-🈲:
-  lore: "ipBan"
-  command: "ban-ip @name"
