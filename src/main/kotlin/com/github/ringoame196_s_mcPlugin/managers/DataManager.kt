@@ -1,16 +1,35 @@
 package com.github.ringoame196_s_mcPlugin.managers
 
-import com.github.ringoame196_s_mcPlugin.Data
-import com.github.ringoame196_s_mcPlugin.PanelData
+import com.github.ringoame196_s_mcPlugin.datas.Data
+import com.github.ringoame196_s_mcPlugin.datas.PanelData
+import net.dv8tion.jda.api.JDA
 
 object DataManager {
-    fun addReaction(panelID: String, lore: String, command: String) {
-        Data.panels[panelID] = PanelData(lore, command)
-    }
+	fun setJDA(JDA: JDA) {
+		Data.JDA = JDA
+	}
 
-    fun acquisitionReactions() = Data.panels
+	fun acquisitionJDA() = Data.JDA
 
-    fun acquisitionReactionPanelData(reactionID: String): PanelData? = Data.panels[reactionID]
+	fun setDisplayChannelID(discordChannelID: String?) {
+		Data.displayChannelID = discordChannelID
+	}
 
-    fun acquisitionIconAPI() = Data.ICON_API_URL
+	fun acquisitionDisplayChannelID() = Data.displayChannelID
+
+	fun setPermitRollID(permitRollID: String?) {
+		Data.permitRollID = permitRollID
+	}
+
+	fun acquisitionPermitRollID() = Data.permitRollID
+
+	fun addReaction(panelID: String, lore: String, command: String) {
+		Data.panels[panelID] = PanelData(lore, command)
+	}
+
+	fun acquisitionReactions() = Data.panels
+
+	fun acquisitionReactionPanelData(reactionID: String): PanelData? = Data.panels[reactionID]
+
+	fun acquisitionIconAPI() = Data.ICON_API_URL
 }
