@@ -8,17 +8,18 @@
 [ダウンロードリンク](https://github.com/ringoame196-s-mcPlugin/DiscordJoinManagePANEL/releases/latest)
 
 ## コマンド
-
-- /djoinpmanager <reload> - パネル情報をリロードする
-
+| コマンド名   |     説明      | 権限 |
+| --- | ----------- | ------- |
+| djoinmanager <reload> | パネル情報をリロードする | OP
 ## 使い方
 - DiscordBOTで送られてきたパネルに実行したい絵文字をクリック(管理者権限持ちのみ)
 
 ## configファイル
-
-- token - DiscordBOTのToken
-- display_channel_id - 通知するチャンネルのID
-- activity - BOTのアクティビティに表示する
+| key名   |     説明      | デフォルト値 |
+| --- | ----------- | ------- |
+| token | DiscordBOTのToken | "" |
+| display_channel_id | 通知するチャンネルのID | "" |
+| activity | BOTのアクティビティ | "Minecraft" |
 
 ## reactionPanel
 
